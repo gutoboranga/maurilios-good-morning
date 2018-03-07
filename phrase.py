@@ -24,13 +24,20 @@ substantives = ["da sétima arte", "do audio-visual", "da indústria dramaturga"
                     "do drama televisivo", "das películas", "dos longa-metragens"];
 
 
-def blend():
+def getPhrase():
 
     adjectiveIndex = int(random.uniform(0, len(adjectives)-1));
     substantiveIndex = int(random.uniform(0, len(substantives)-1));
 
     return adjectives[adjectiveIndex] + " " + substantives[substantiveIndex];
 
+def getAdjective():
+    i = int(random.uniform(0, len(adjectives)-1))
+    return adjectives[i]
+    
+def getSubstantive():
+    i = int(random.uniform(0, len(substantives)-1))
+    return substantives[i]
 
 # def text_with_stroke(draw,width,height,line,font,fillcolor,shadowcolor):
 #     draw.text((width-1, height), line, font=font, fill=shadowcolor)
@@ -53,4 +60,4 @@ def blend():
 # text_with_stroke(draw,x,y,"testando",font,fillcolor,shadowcolor)
 # y += height
 
-print(blend());
+# print(getPhrase());
