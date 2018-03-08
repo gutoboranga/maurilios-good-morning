@@ -8,8 +8,6 @@ from PIL import Image
 from PIL import ImageFont
 
 
-
-
 adjectives = ["amantes", "entusiastas", "guerreiros",
                     "apreciadores", "simpatizantes", "devotos",
                     "estudiosos", "adeptos", "aficionados",

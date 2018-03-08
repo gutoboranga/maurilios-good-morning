@@ -1,3 +1,13 @@
+from os import listdir
+from random import uniform
+
+def get_maurilio():
+    folder_path = "./maurilios"
+    
+    maurilios = listdir(folder_path)
+    index = int(uniform(0, len(maurilios)-1));
+    
+    return folder_path + "/" + maurilios[index]
 
 def calculate_maurilio_size((background_w, background_h), (maurilio_w, maurilio_h)):
     if maurilio_w > maurilio_h:

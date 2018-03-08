@@ -17,9 +17,9 @@ def make_borders(text1, text2, margin, font, size):
     
     borders = [
         {'size': int(math.floor(font.size/10)), 'opacity': 25},
-        {'size': int(math.floor(font.size/20)), 'opacity': 50},
-        {'size': int(math.floor(font.size/30)), 'opacity': 100},
-        {'size': int(math.floor(font.size/40)), 'opacity': 170}
+        {'size': int(math.floor(font.size/20)), 'opacity': 75},
+        {'size': int(math.floor(font.size/30)), 'opacity': 150},
+        {'size': int(math.floor(font.size/40)), 'opacity': 220}
     ]
 
     for border in borders:
@@ -49,6 +49,7 @@ def newText(texture, text1, text2, margin = 10):
     maskImage = Image.new('RGBA', textureImage.size, (255, 255, 255, 0))
 
     font = ImageFont.truetype(cwd + "/fonts/precious/Precious.ttf", 50, encoding="unic")
+    # font = ImageFont.truetype("arial.ttf", 50, encoding="unic")
     draw = ImageDraw.Draw(maskImage)
     
     # BORDERS
@@ -74,5 +75,12 @@ def newText(texture, text1, text2, margin = 10):
     result = borders_image.crop(box)
     result.save("text.png")
     
+def calculate_text_size((background_w, background_h), (text_w, text_h)):
+    ratio = float(text_h) / float(text_w)
+    
+    width = int((background_w / 3) * 2.5)
+    height = int(width * ratio)
+    
+    return (width, height)
 
 # newText("texture", "Bom dia, amantes", "do Palestrinha", 20)
